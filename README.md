@@ -34,12 +34,13 @@ A basic serial assistant is designed using qt framework. It has the function of 
 单片机编程伪代码：
 
 ```\
-typedef struct sonsor
+typedef struct sonsor  //定义数据结构
 {
     float sensor1;
     float sensor2;
     float sensor3;
     float sensor4;
+    float sensor5;
 }	sonsor;
 
 sonsor cap;
@@ -47,17 +48,18 @@ sonsor cap;
 int main(void)
 {
     Sys_Init();
-    sonsor_Init();
+    sonsor_Init();	//假设初始化传感器
     while(1)
     {
         delay_ms(100);
-        cap.sensor1 = sonsor_Read(CHANNEL_1);
+        cap.sensor1 = sonsor_Read(CHANNEL_1);	//假设读取5通道的传感器数据
         cap.sensor2 = sonsor_Read(CHANNEL_2);
         cap.sensor3 = sonsor_Read(CHANNEL_3);
         cap.sensor4 = sonsor_Read(CHANNEL_4);
+        cap.sensor5 = sonsor_Read(CHANNEL_5);
         
         //printf() 需要串口重定向到uart输出
-        printf("*%0.1f,%0.1f,%0.1f,%0.1f,0#");	//第五位没采集到数据暂时设置为0
+        printf("*%0.1f,%0.1f,%0.1f,%0.1f,%0.1f#", cap.sensor1, cap.sensor2, cap.sensor3, cap.sensor4, cap.sensor5);
         
     }
 }
