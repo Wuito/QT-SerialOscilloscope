@@ -1,8 +1,6 @@
 # QT-SerialOscilloscope
 A basic serial assistant is designed using qt framework. It has the function of analyzing data, saving data and drawing real-time curve.
 
-## 上位机使用教程
-
 具体设计教程说明参考[CSDN博客](https://blog.csdn.net/weixin_47407066/article/details/130042313?spm=1001.2014.3001.5501)
 
 安装好qt之后使用Qt Creator打开SerialPortDate.pro工程文件之后，配置好工程环境，点击运行按钮。
